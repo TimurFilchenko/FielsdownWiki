@@ -31,12 +31,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "https://www.fielsdown-wiki.vercel.app/(.*)",
-      "destination": "https://fielsdownwiki.vercel.app/$1",
-      "permanent": true
-    }
   ]
 }
