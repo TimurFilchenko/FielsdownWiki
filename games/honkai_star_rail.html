@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honkai: Star Rail — Fielsdown.wiki</title>
+  <style>
+    /*
+     * ██████ HONKAI_STAR_RAIL.HTML — Fielsdown.wiki
+     * Автор: Timur Filchenko Sergeevich
+     * Цель: Разоблачить HSR как линейную гача-тюрьму
+     * Тема: Красно-чёрная безжалостность
+     * Вкладки: Информация | Критика | Вики
+     * Оценка: Честная, несмягчённая
+     * Стабильность: как швейцарские часы, но без иллюзий
+     */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-secondary: #121212;
+      --text-primary: #f0f0f0;
+      --text-muted: #aaaaaa;
+      --accent-red: #ff2a2a;
+      --accent-red-dark: #cc0000;
+      --link-color: #ff4d4d;
+      --border-color: #333;
+      --card-bg: #1a1a1a;
+      --tab-bg-inactive: #151515;
+      --tab-bg-active: #222;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .cover {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 30px 0 25px;
+      box-shadow: 0 0 20px rgba(255, 42, 42, 0.15);
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: var(--accent-red);
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin: 30px 0 25px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      background: var(--tab-bg-inactive);
+      color: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .tab-btn:hover {
+      background: var(--tab-bg-active);
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--accent-red);
+      border-top: 2px solid var(--accent-red);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--accent-red);
+      margin: 25px 0 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .section p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .section ul, .section ol {
+      margin-left: 30px;
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid var(--accent-red);
+    }
+
+    .rating h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-red);
+      text-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .cover { max-height: 250px; }
+      .tab-btn { padding: 10px 16px; font-size: 1rem; }
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-red);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-red-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Honkai: Star Rail</h1>
+    
+    <!-- Обложка -->
+    <img 
+      src="https://placehold.co/900x400/1a1a1a/ff2a2a?text=Honkai+Star+Rail+Cover" 
+      alt="Обложка Honkai: Star Rail" 
+      class="cover"
+      loading="eager"
+    >
+
+    <!-- Вкладки -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="info">Информация</button>
+      <button class="tab-btn" data-tab="critique">Критика</button>
+      <button class="tab-btn" data-tab="wiki">Вики</button>
+    </div>
+
+    <!-- Содержимое вкладок -->
+    <div id="info" class="tab-content active">
+      <div class="section">
+        <h2>Что такое HSR?</h2>
+        <p>
+          <strong>Honkai: Star Rail (HSR)</strong> — это пошаговая RPG от HoYoverse, выпущенная в апреле 2023 года. 
+          Игра позиционируется как «космическая фэнтези-опера» с элементами аниме, лора и гача. 
+          Действие следует за Путешественником, который путешествует по «Аэлиумным нитям» на поезде под названием «Астральный экспресс».
+        </p>
+        <p>
+          В отличие от Genshin, здесь нет открытого мира. Всё — через линейные зоны с диалогами, головоломками и пошаговыми боями.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Геймплей</h2>
+        <ul>
+          <li><strong>Пошаговые бои</strong> — как в старых JRPG, но без свободы тактики.</li>
+          <li><strong>Стихии (Путь)</strong> — 7 типов персонажей: Разрушение, Поддержка, Контроль и т.д.</li>
+          <li><strong>Энергия (Следы, Свет)</strong> — ограничения на использование навыков и ультимейтов.</li>
+          <li><strong>Гача (Судьба)</strong> — рулетка на персонажей и оружие (Следы).</li>
+          <li><strong>Симулякрумы</strong> — endless-режим гринда за награды.</li>
+          <li><strong>События</strong> — мини-игры, повторяющиеся каждые 6 недель.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Монетизация</h2>
+        <p>
+          — Примогемы за реальные деньги  
+          — Платный Battle Pass  
+          — Ограниченная энергия («Топливо»)  
+          — Артефакты (Следы) — рулетка с шансом 0.7% на 5★  
+          — Нет сюжета без гринда
+        </p>
+      </div>
+    </div>
+
+    <div id="critique" class="tab-content">
+      <div class="section">
+        <h2>Честная критика — без обмана</h2>
+        <p>
+          Honkai: Star Rail — это <strong>иллюзия JRPG</strong>. Да, есть диалоги, да, есть «лор». Но игра не даёт тебе выбирать. 
+          Ты не решаешь судьбу персонажей — ты нажимаешь «пробел» 500 раз в день, чтобы HoYoverse заработал.
+        </p>
+        <p>
+          <strong>Проблема №1: Это не JRPG — это кликер с аниме.</strong>  
+          Бои выглядят как Final Fantasy, но решаются за 10 секунд автобоем. Нет тактики. Нет риска. Нет выбора. 
+          Ты не управляешь — ты <em>наблюдаешь</em>.
+        </p>
+        <p>
+          <strong>Проблема №2: Сюжет — для избранных.</strong>  
+          Чтобы разблокировать финал главы, нужно:
+          — Прокачать 4 персонажей до 70 уровня  
+          — Собрать 16 сетов артефактов  
+          — Пройти 30 боёв на максимальной сложности  
+          Это не «сюжет» — это <strong>платный контент</strong>.
+        </p>
+        <p>
+          <strong>Проблема №3: Гача — чище, но циничнее.</strong>  
+          В HSR нет «открытого мира», который мог бы отвлечь от гача. Здесь гача — <em>всё</em>.  
+          Каждый новый персонаж — это новый повод тратить. Нет альтернатив. Нет замены.
+        </p>
+        <p>
+          <strong>Проблема №4: «Астральный экспресс» — иллюзия путешествия.</strong>  
+          Ты не исследуешь галактику. Ты переходишь из одного меню в другое. 
+          Каждая «планета» — это набор диалогов и 3 локации. Это не космос — это <em>интерактивный комикс с боевой системой</em>.
+        </p>
+        <p>
+          Итог: HSR — это <strong>Genshin без мира, но с ещё большей зависимостью от гача</strong>.  
+          Это не игра. Это <em>ежедневный ритуал для финансирования HoYoverse</em>.
+        </p>
+      </div>
+
+      <div class="rating">
+        <h3>Оценка Fielsdown.wiki (честная):</h3>
+        <div class="score">19/100</div>
+        <p>
+          — За анимацию боёв: +8  
+          — За пустоту выбора: -50  
+          — За гача-зависимость: -40  
+          — За ложь «JRPG»: -39
+        </p>
+        <p style="margin-top: 15px; font-style: italic; color: var(--accent-red);">
+          Это не оценка игры. Это оценка <strong>обмана</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div id="wiki" class="tab-content">
+      <div class="section">
+        <h2>Вики-справка (Fielsdown Edition)</h2>
+        <p>
+          Здесь нет фан-арта. Здесь — правда.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Персонажи — актёры в рекламе</h2>
+        <ul>
+          <li><strong>Danheng</strong> — «таинственный странник». На деле — стандартный Контроль без глубины.</li>
+          <li><strong>Seele</strong> — «девочка с двойной личностью». Продаётся за $120. Без неё — гринд в 2 раза дольше.</li>
+          <li><strong>Jing Yuan</strong> — «гениальный полководец». Его ультимейт — 70% урона в бою. Без него — проигрыш.</li>
+        </ul>
+        <p>
+          Вывод: персонажи — не герои. Это <strong>механики, упакованные в аниме</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Лор — маркетинг в коробке</h2>
+        <p>
+          HoYoverse связывает HSR с Honkai Impact 3rd и даже намекает на связь с Genshin.  
+          Но это не «мультивселенная» — это <strong>попытка удержать фанатов</strong> в экосистеме.  
+          Лор раскрывается через комиксы, а не через игру. Это не нарратив — это <em>реклама будущих пуллов</em>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Сравнение с настоящими JRPG</h2>
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th style="text-align: left; padding: 10px;">Игра</th>
+              <th style="text-align: left; padding: 10px;">Тактика</th>
+              <th style="text-align: left; padding: 10px;">Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">Honkai: Star Rail</td>
+              <td style="padding: 10px;">Иллюзия</td>
+              <td style="padding: 10px;">Бесконечность</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">Persona 5 Royal</td>
+              <td style="padding: 10px;">Реальная тактика</td>
+              <td style="padding: 10px;">$60 и всё</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px;">Xenoblade Chronicles</td>
+              <td style="padding: 10px;">Глубина + свобода</td>
+              <td style="padding: 10px;">$60 и 200 часов игры</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Fielsdown.wiki — Star Rail не ведёт к звёздам. Он ведёт к кассе HoYoverse.</p>
+      <p>Сделано в Минске. Для тех, кто видит пустоту за спецэффектами.</p>
+    </footer>
+  </div>
+
+  <script>
+    /*
+     * ██████ ВКЛАДКИ — HONKAI_STAR_RAIL.HTML
+     * Без библиотек. Без обмана. Без сбоев.
+     * Работает как механические часы — просто и точно.
+     * Автор: Timur Filchenko Sergeevich
+     */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          this.classList.add('active');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+  </html>
