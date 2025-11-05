@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenless Zone Zero — Fielsdown.wiki</title>
+  <style>
+    /*
+     * ██████ ZENLESS_ZONE_ZERO.HTML — Fielsdown.wiki
+     * Автор: Timur Filchenko Sergeevich
+     * Тема: Красно-чёрная агрессивная критика
+     * Цель: Разрушить иллюзии о ZZZ
+     * Структура: Вкладки — Информация | Критика | Вики
+     * Объём: Максимум строк для контроля и стабильности
+     * Стиль: Как швейцарские часы, но с ножом
+     */
+
+    /* === ГЛОБАЛЬНЫЙ СБРОС === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* === ЦВЕТОВАЯ ПАЛИТРА === */
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-secondary: #121212;
+      --text-primary: #f0f0f0;
+      --text-muted: #aaaaaa;
+      --accent-red: #ff2a2a;
+      --accent-red-dark: #cc0000;
+      --link-color: #ff4d4d;
+      --border-color: #333;
+      --card-bg: #1a1a1a;
+      --tab-bg-inactive: #151515;
+      --tab-bg-active: #222;
+    }
+
+    /* === ОСНОВА === */
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* === ОБЛОЖКА === */
+    .cover {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 30px 0 25px;
+      box-shadow: 0 0 20px rgba(255, 42, 42, 0.15);
+      display: block;
+    }
+
+    /* === ЗАГОЛОВОК === */
+    h1 {
+      font-size: 2.4rem;
+      color: var(--accent-red);
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
+    }
+
+    /* === ВКЛАДКИ === */
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin: 30px 0 25px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      background: var(--tab-bg-inactive);
+      color: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .tab-btn:hover {
+      background: var(--tab-bg-active);
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--accent-red);
+      border-top: 2px solid var(--accent-red);
+    }
+
+    /* === СОДЕРЖИМОЕ ВКЛАДОК === */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* === ТЕКСТОВЫЕ БЛОКИ === */
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--accent-red);
+      margin: 25px 0 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .section p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .section ul, .section ol {
+      margin-left: 30px;
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+
+    /* === ОЦЕНКА === */
+    .rating {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid var(--accent-red);
+    }
+
+    .rating h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-red);
+      text-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
+    }
+
+    /* === ССЫЛКИ === */
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* === ПОДВАЛ === */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* === АДАПТИВНОСТЬ === */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .cover { max-height: 250px; }
+      .tab-btn { padding: 10px 16px; font-size: 1rem; }
+    }
+
+    /* === СКРОЛЛБАР === */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-red);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-red-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Zenless Zone Zero</h1>
+    
+    <!-- Обложка (заменить на реальное изображение позже) -->
+    <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN03-mTpvw7eSTrtEAH1tY2DDxkpPb3TND7ZxzBVrFrQ&s=10" 
+      class="cover"
+      loading="eager"
+    >
+
+    <!-- Вкладки -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="info">Информация</button>
+      <button class="tab-btn" data-tab="critique">Критика</button>
+      <button class="tab-btn" data-tab="wiki">Вики</button>
+    </div>
+
+    <!-- Содержимое вкладок -->
+    <div id="info" class="tab-content active">
+      <div class="section">
+        <h2>Базовая информация</h2>
+        <p>
+          <strong>Zenless Zone Zero (ZZZ)</strong> — это гипер-стилизованная action-RPG с элементами roguelike и life-sim, разработанная HoYoverse (бывшая miHoYo), 
+          выпущенная в 2024 году. Игра позиционируется как «городской фэнтези-экшен», сочетающий постапокалиптический сеттинг, аниме-эстетику и гача-механику.
+        </p>
+        <p>
+          Действие происходит в городе Нью-Элион — последнем убежище человечества после катастрофы, вызванной появлением «Холлов» — аномальных зон, 
+          населённых монстрами («Этерны»). Игрок управляет «Проводником», который нанимает агентов (персонажей) для исследования Холлов.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Геймплей</h2>
+        <ul>
+          <li><strong>Исследование Холлов</strong> — прохождение процедурных подземелий с боёвкой в реальном времени.</li>
+          <li><strong>Командный бой</strong> — до 3 персонажей в отряде, переключение на лету.</li>
+          <li><strong>Экипировка</strong> — драйверы (оружие), диски (артефакты), цепочки навыков.</li>
+          <li><strong>База (11-11)</strong> — мини-квартира с интерактивными элементами, кастомизацией и квестами.</li>
+          <li><strong>Гача-система</strong> — рулетка на персонажей (5★) и драйверы (5★), с жёсткими пулами и гриндом.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Технические детали</h2>
+        <p>
+          Платформы: PC, iOS, Android.  
+          Движок: собственный (возможно, модифицированный Unity).  
+          Онлайн: обязательное подключение к серверу даже для соло-контента.  
+          Монетизация: агрессивная гача, боевые пропуска, косметика, энергия («батарейка»).
+        </p>
+      </div>
+    </div>
+
+    <div id="critique" class="tab-content">
+      <div class="section">
+        <h2>Жёсткая критика — без цензуры</h2>
+        <p>
+          ZZZ — это не игра, а <strong>машина по выкачиванию денег</strong>, упакованная в яркую оболочку. HoYoverse снова копирует, но не создаёт. 
+          Всё, что есть в ZZZ, уже было в Honkai Impact, Tower of Fantasy, даже в Persona 5 — но без души.
+        </p>
+        <p>
+          <strong>Проблема №1: Ненужная сложность.</strong>  
+          Боевая система выглядит динамично, но на деле сводится к спаму ультимейта и переключению персонажей. 
+          Нет глубины, нет тактики — только анимации и спецэффекты. Это не экшен, это <em>анимационный слайд-шоу с кнопками</em>.
+        </p>
+        <p>
+          <strong>Проблема №2: Гача-ад.</strong>  
+          Шанс на 5★ — 0.6%. Пул жёсткий. Материалов на прокачку не хватает даже после 2 недель гринда. 
+          Игра <em>заставляет</em> тратить деньги или страдать. Это не «свободный выбор» — это вымогательство.
+        </p>
+        <p>
+          <strong>Проблема №3: «Жизнь» без жизни.</strong>  
+          Квартира 11-11 — пустая оболочка. Да, можно поставить мебель, но зачем? Нет взаимодействия, нет смысла. 
+          Это не «социальный симулятор» — это <em>пустой экран с аниме-девочками</em>, которые повторяют одни и те же фразы.
+        </p>
+        <p>
+          <strong>Проблема №4: Холлов — не хватает.</strong>  
+          Через неделю контент заканчивается. Остаётся только гринд одних и тех же подземелий. Это не игра — это <em>работа на HoYoverse</em>.
+        </p>
+        <p>
+          Вывод: ZZZ — это <strong>гипер-стимул без содержания</strong>. Глянцевая упаковка для дешёвой гача-машины. 
+          Если вы любите честные игры — бегите. Сюда приходят только фанаты HoYoverse или те, кто готов платить за визуал.
+        </p>
+      </div>
+
+      <div class="rating">
+        <h3>Оценка Fielsdown.wiki:</h3>
+        <div class="score">28/100</div>
+        <p>
+          — За анимации: +10  
+          — За пустоту внутри: -50  
+          — За гача-ад: -30  
+          — За обман: -2
+        </p>
+      </div>
+    </div>
+
+    <div id="wiki" class="tab-content">
+      <div class="section">
+        <h2>Вики-справка (Fielsdown Edition)</h2>
+        <p>
+          Эта секция — не для фанатов. Это для тех, кто хочет <strong>знать правду</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Персонажи (агенты)</h2>
+        <p>
+          Все агенты делятся на роли: Destroyer, Stun, Anomaly, Support. Но на деле — разница в 5% урона. 
+          Уникальность? Нет. Только визуал и голос.
+        </p>
+        <ul>
+          <li><strong>Belle</strong> — лицо игры. Бесполезна без инвестиций.</li>
+          <li><strong>Nekomiya Mana</strong> — кошка. Продают за деньги. Имеет 3 одинаковых способности.</li>
+          <li><strong>Grace Howard</strong> — «сильная женщина». На деле — средний дамагер с плохой анимацией.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Лор (или его отсутствие)</h2>
+        <p>
+          HoYoverse не рассказывает лор — он <em>продаёт его кусками</em>. Чтобы узнать, кто такие «Корни» или «Радикалы», 
+          нужно пройти 50 заданий, посмотреть 20 комиксов и потратить 3 часа на диалоги с повторяющимися фразами. 
+          Это не нарратив — это <strong>контент-барьер</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Сравнение с другими играми</h2>
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th style="text-align: left; padding: 10px;">Игра</th>
+              <th style="text-align: left; padding: 10px;">Глубина</th>
+              <th style="text-align: left; padding: 10px;">Честность</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">Zenless Zone Zero</td>
+              <td style="padding: 10px;">Плоскость</td>
+              <td style="padding: 10px;">0%</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">Persona 5</td>
+              <td style="padding: 10px;">Глубина</td>
+              <td style="padding: 10px;">100%</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px;">NieR:Automata</td>
+              <td style="padding: 10px;">Философия</td>
+              <td style="padding: 10px;">95%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Fielsdown.wiki — Мы не продаем иллюзии. Мы их ломаем.</p>
+      <p>Сделано в Минске, Беларусь. Для тех, кто видит.</p>
+    </footer>
+  </div>
+
+  <script>
+    /*
+     * ██████ ВКЛАДКИ — РАБОТАЮТ МГНОВЕННО
+     * Принцип: data-tab + active класс
+     * Нет внешних библиотек
+     * Стабильность: 100%
+     * Автор: Timur Filchenko Sergeevich
+     */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Убираем активный класс у всех
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          // Добавляем активный текущей
+          this.classList.add('active');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+  </html>
