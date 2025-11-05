@@ -1,12 +1,13 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
+      "src": "**/*.html",
+      "use": "@vercel/static-build"
     },
     {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
+      "src": "**/*.{css,js,xml,txt}",
+      "use": "@vercel/static-build"
     }
   ],
   "headers": [
@@ -14,22 +15,32 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Frame-Options",
-          "value": "DENY"
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
         },
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
         {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
         },
         {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    { 
+      "source": "/index", 
+      "destination": "/index.html" 
+    },
+    { 
+      "source": "/wiki", 
+      "destination": "/wiki.html" 
     }
   ]
 }
