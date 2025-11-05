@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Impact — Fielsdown.wiki</title>
+  <style>
+    /*
+     * ██████ GENSHIN.HTML — Fielsdown.wiki
+     * Автор: Timur Filchenko Sergeevich
+     * Тема: Красно-чёрная тьма над Тейватом
+     * Цель: Разоблачить Genshin как гача-иллюзию
+     * Вкладки: Информация | Критика | Вики
+     * Объём: Максимум строк — для контроля и точности
+     * Стабильность: как швейцарские часы, но с ядом
+     */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-secondary: #121212;
+      --text-primary: #f0f0f0;
+      --text-muted: #aaaaaa;
+      --accent-red: #ff2a2a;
+      --accent-red-dark: #cc0000;
+      --link-color: #ff4d4d;
+      --border-color: #333;
+      --card-bg: #1a1a1a;
+      --tab-bg-inactive: #151515;
+      --tab-bg-active: #222;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .cover {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 30px 0 25px;
+      box-shadow: 0 0 20px rgba(255, 42, 42, 0.15);
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: var(--accent-red);
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 2px;
+      margin: 30px 0 25px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 12px 24px;
+      background: var(--tab-bg-inactive);
+      color: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .tab-btn:hover {
+      background: var(--tab-bg-active);
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--accent-red);
+      border-top: 2px solid var(--accent-red);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--accent-red);
+      margin: 25px 0 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .section p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .section ul, .section ol {
+      margin-left: 30px;
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid var(--accent-red);
+    }
+
+    .rating h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-red);
+      text-shadow: 0 0 15px rgba(255, 42, 42, 0.4);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .cover { max-height: 250px; }
+      .tab-btn { padding: 10px 16px; font-size: 1rem; }
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-red);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-red-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Genshin Impact</h1>
+    
+    <!-- Обложка -->
+    <img 
+      src="https://foni.papik.pro/uploads/posts/2024-10/foni-papik-pro-hzc2-p-kartinki-nazvanie-genshin-impakt-na-prozra-4.png" 
+      class="cover"
+      loading="eager"
+    >
+
+    <!-- Вкладки -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="info">Информация</button>
+      <button class="tab-btn" data-tab="critique">Критика</button>
+      <button class="tab-btn" data-tab="wiki">Вики</button>
+    </div>
+
+    <!-- Содержимое вкладок -->
+    <div id="info" class="tab-content active">
+      <div class="section">
+        <h2>Основные сведения</h2>
+        <p>
+          <strong>Genshin Impact</strong> — action-RPG с открытым миром, разработанная miHoYo (ныне HoYoverse), выпущенная в сентябре 2020 года. 
+          Игра использует элементы аниме-эстетики, восточной мифологии и гача-механики. Действие происходит в вымышленном мире <strong>Тейват</strong>, 
+          разделённом на семь наций, каждая из которых покровительствуется Архонтем и стихией.
+        </p>
+        <p>
+          Игрок управляет «Путешественником» — загадочным персонажем, ищущим пропавшего брата/сестру. По ходу игры можно набирать команду из 
+          до 4 персонажей, полученных через гача-систему.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Геймплей</h2>
+        <ul>
+          <li><strong>Открытый мир</strong> — исследование локаций, головоломки, секреты, прыжки по холмам.</li>
+          <li><strong>Элементальная система</strong> — 7 стихий (Пиро, Гидро, Электро и др.), реакции между ними.</li>
+          <li><strong>Бои в реальном времени</strong> — переключение персонажей для активации реакций.</li>
+          <li><strong>Прокачка</strong> — уровень, таланты, артефакты, оружие. Гринд на недели.</li>
+          <li><strong>Гача (Wish)</strong> — платная рулетка на персонажей (5★) и оружие (5★).</li>
+          <li><strong>Контент</strong> — еженедельные боссы, события, Акт II и далее (платный DLC).</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Монетизация</h2>
+        <p>
+          Игра бесплатна, но <strong>всё ценное — за деньги</strong>.  
+          — Примогемы (валюта) за реальные деньги.  
+          — Battle Pass (Gnostic Hymn) — платный путь опыта.  
+          — Артефакты — рулетка с шансом 0.6% на хороший сет.  
+          — Энергия (Resin) — ограничение на прогресс, чтобы замедлить гринд.
+        </p>
+      </div>
+    </div>
+
+    <div id="critique" class="tab-content">
+      <div class="section">
+        <h2>Жёсткая критика — без прикрас</h2>
+        <p>
+          Genshin Impact — это <strong>иллюзия свободы</strong>. Да, мир красив. Да, персонажи симпатичны. Но за фасадом — 
+          та же гача-машина, что и у всех. Только масштабнее, дороже и циничнее.
+        </p>
+        <p>
+          <strong>Проблема №1: Открытый мир — пустой.</strong>  
+          Тейват — это гигантская декорация. Нет живого мира: NPC повторяют одни и те же фразы, 
+          нет случайных событий, нет последствий. Это не «открытый мир» — это <em>музей под открытым небом</em>.
+        </p>
+        <p>
+          <strong>Проблема №2: Гринд — это не игра, это работа.</strong>  
+          Чтобы прокачать одного персонажа до максимума, нужно:
+          — 3 недели сбора ресурсов  
+          — 500 побед над боссами  
+          — 1000 часов на артефакты (в среднем)  
+          Это не для игроков — это для фанатов, готовых жертвовать жизнью.
+        </p>
+        <p>
+          <strong>Проблема №3: Гача с ложью.</strong>  
+          «Гарантированный 5★ на 90-м пулле» — звучит честно? Нет. Потому что:
+          — Шанс получить <strong>нужного</strong> персонажа — 50% (а не 100%)  
+          — Если повезло не в тот пул — тратишь ещё 180 пуллов  
+          — Один персонаж стоит ~$200 без гарантий  
+          Это не лотерея — это <em>психологическая ловушка</em>.
+        </p>
+        <p>
+          <strong>Проблема №4: Контент кончается.</strong>  
+          После Акта V — пустота. События повторяются. Новые персонажи требуют новых инвестиций. 
+          HoYoverse не создаёт игру — они создают <strong>циклический рынок</strong> для своих товаров.
+        </p>
+        <p>
+          Итог: Genshin — это <strong>аниме-обёртка для казино</strong>. Красиво? Да. Глубоко? Нет. Честно? Ни в коем случае.
+        </p>
+      </div>
+
+      <div class="rating">
+        <h3>Оценка Fielsdown.wiki:</h3>
+        <div class="score">22/100</div>
+        <p>
+          — За графику: +15  
+          — За пустоту мира: -40  
+          — За гача-обман: -35  
+          — За гринд-рабство: -18
+        </p>
+      </div>
+    </div>
+
+    <div id="wiki" class="tab-content">
+      <div class="section">
+        <h2>Вики-справка (Fielsdown Edition)</h2>
+        <p>
+          Эта информация — не для фанатов. Это для тех, кто хочет <strong>увидеть систему</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Персонажи — кому выгодны?</h2>
+        <p>
+          Все персонажи — это <strong>продукты</strong>. У них нет характера, только набор фраз и спецэффектов.
+        </p>
+        <ul>
+          <li><strong>Raiden Shogun</strong> — продавалась как «революция в геймплее». На деле — просто сильный DPS. Цена: ~$150.</li>
+          <li><strong>Hu Tao</strong> — «уникальный стиль». Фактически — копия любой Pyro-дамагерки.</li>
+          <li><strong>Ayaka</strong> — первая 5★. Слабая без инвестиций в артефакты. А артефакты — лотерея.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Лор — маркетинг в маске</h2>
+        <p>
+          Лор раскрывается через «Артефакты», «Комиксы» и «События». Но чтобы прочитать всё — нужно:
+          — Пройти игру на 3 аккаунтах  
+          — Потратить $500 на пуллы  
+          — Просидеть 1000 часов  
+          Это не нарратив — это <strong>платный контент под видом истории</strong>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Сравнение с честными играми</h2>
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th style="text-align: left; padding: 10px;">Игра</th>
+              <th style="text-align: left; padding: 10px;">Свобода</th>
+              <th style="text-align: left; padding: 10px;">Цена честности</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">Genshin Impact</td>
+              <td style="padding: 10px;">Иллюзия</td>
+              <td style="padding: 10px;">Твоя душа</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 10px;">The Legend of Zelda: BOTW</td>
+              <td style="padding: 10px;">Реальная свобода</td>
+              <td style="padding: 10px;">$60 и всё</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px;">Elden Ring</td>
+              <td style="padding: 10px;">Сложность как искусство</td>
+              <td style="padding: 10px;">$60 и пот</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Fielsdown.wiki — Genshin не игра. Это бизнес-модель в аниме-оболочке.</p>
+      <p>Сделано в Минске. Для тех, кто не верит в волшебство.</p>
+    </footer>
+  </div>
+
+  <script>
+    /*
+     * ██████ СИСТЕМА ВКЛАДОК — GENSHIN.HTML
+     * Без багов. Без задержек. Без обмана.
+     * Работает даже без интернета.
+     * Автор: Timur Filchenko Sergeevich
+     */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          this.classList.add('active');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
