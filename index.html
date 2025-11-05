@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fielsdown.wiki — Жёсткая критика</title>
+  <style>
+    /* 
+     * ██████ STYLE.CSS — Fielsdown.wiki 
+     * Автор: Timur Filchenko Sergeevich
+     * Цель: Честная критика без прикрас
+     * Тема: Тёмная, с акцентами красного и чёрного
+     * Стабильность: как швейцарские часы
+     * Объём: максимум строк для читаемости и контроля
+     */
+
+    /* === СБРОС СТИЛЕЙ === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ === */
+    :root {
+      --bg-main: #0a0a0a;
+      --bg-secondary: #121212;
+      --text-primary: #f0f0f0;
+      --text-muted: #aaaaaa;
+      --accent-red: #ff2a2a;
+      --accent-red-dark: #cc0000;
+      --link-color: #ff4d4d;
+      --border-color: #333333;
+      --card-bg: #1a1a1a;
+    }
+
+    /* === ОСНОВНОЙ КОНТЕКСТ СТРАНИЦЫ === */
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', 'SF Pro Display', system-ui, sans-serif;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    /* === КОНТЕЙНЕР ОГРАНИЧЕНИЯ ШИРИНЫ === */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* === ШАПКА САЙТА === */
+    header {
+      padding: 40px 0 30px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-red);
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--accent-red);
+      text-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === ПОИСКОВАЯ СТРОКА === */
+    .search-box {
+      margin: 25px auto 35px;
+      position: relative;
+      max-width: 500px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--card-bg);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-red);
+      box-shadow: 0 0 0 3px rgba(255, 42, 42, 0.2);
+    }
+
+    .search-box input::placeholder {
+      color: #666;
+    }
+
+    /* === КОНТЕЙНЕР ИГР === */
+    .games-container {
+      display: grid;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* === КАРТОЧКА ИГРЫ === */
+    .game-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .game-card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+
+    .game-card a {
+      text-decoration: none;
+      color: var(--link-color);
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: block;
+      word-break: break-word;
+    }
+
+    .game-card a:hover {
+      color: white;
+      text-shadow: 0 0 8px var(--accent-red);
+    }
+
+    /* === ПОДВАЛ === */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* === АДАПТИВНОСТЬ === */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .search-box input {
+        padding: 12px 16px;
+        font-size: 1rem;
+      }
+    }
+
+    /* === ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ЭСТЕТИКИ === */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent-red);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-red-dark);
+    }
+
+    /* === ЗАГЛУШКИ ДЛЯ БУДУЩЕГО РАСШИРЕНИЯ === */
+    .hidden { display: none !important; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fielsdown.wiki</h1>
+      <p>Жёсткая, беспощадная и честная критика аниме-игр. Без иллюзий. Без Wikipedia-ванили.</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="gameSearch" placeholder="Поиск игры (начни вводить название)..." autocomplete="off">
+    </div>
+
+    <div class="games-container" id="gamesList">
+      <div class="game-card" data-name="Zenless Zone Zero">
+        <a href="games/zenless_zone_zero.html">Zenless Zone Zero</a>
+      </div>
+      <div class="game-card" data-name="Genshin Impact">
+        <a href="games/genshin.html">Genshin Impact</a>
+      </div>
+      <div class="game-card" data-name="Honkai Star Rail">
+        <a href="games/honkai_star_rail.html">Honkai: Star Rail</a>
+      </div>
+      <div class="game-card" data-name="Honkai Impact 3rd">
+        <a href="games/honkai_impact-3rd.html">Honkai Impact 3rd</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Fielsdown.wiki — все игры разобраны на атомы. Сделано в Минске.</p>
+    </footer>
+  </div>
+
+  <script>
+    /*
+     * ██████ SCRIPT — ЖИВОЙ ПОИСК БЕЗ ЗАПРОСОВ
+     * Тип: клиентский, мгновенный, без сервера
+     * Принцип: фильтрация по data-name при вводе
+     * Стабильность: как швейцарские часы от Майка Тайсона
+     * Автор: Timur Filchenko Sergeevich
+     * Работает даже без интернета
+     */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('gameSearch');
+      const gameCards = document.querySelectorAll('.game-card');
+
+      // Функция фильтрации
+      function filterGames() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        gameCards.forEach(card => {
+          const gameName = card.getAttribute('data-name').toLowerCase();
+          if (gameName.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Назначаем обработчик
+      if (searchInput) {
+        searchInput.addEventListener('input', filterGames);
+      }
+
+      // Инициализация: показать все
+      filterGames();
+    });
+  </script>
+</body>
+  </html>
