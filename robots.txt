@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.google.com/search?q=https://fielsdown-wiki.vercel.app/sitemap.xml
+Sitemap: https://www.google.com/search?q=https://fielsdownwiki.vercel.app/sitemap.xml
