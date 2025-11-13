@@ -1,17 +1,23 @@
 {
   "name": "FielsdownWiki",
   "version": "1.0.0",
-  "description": "Configuration file for Fielsdown Wiki site on Vercel.",
-  "main": "index.js",
+  "description": "Configuration file for Fielsdown Wiki site on Vercel using Next.js.",
   "scripts": {
-    "start": "echo 'Starting static server...'",
-    "build": "echo 'No specific build step required for static content.'",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "vercel",
-    "static"
+    "nextjs",
+    "wiki"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  }
 }
