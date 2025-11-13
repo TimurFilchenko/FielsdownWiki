@@ -1,8 +1,11 @@
 {
   "version": 2,
-  
-  "outputDirectory": ".",
-  
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -27,13 +30,13 @@
     }
   ],
   "rewrites": [
-    { 
-      "source": "/index", 
-      "destination": "/index.html" 
+    {
+      "source": "/index",
+      "destination": "/"
     },
-    { 
-      "source": "/wiki", 
-      "destination": "/wiki.html" 
+    {
+      "source": "/wiki",
+      "destination": "/wiki"
     }
   ]
 }
