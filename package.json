@@ -1,23 +1,23 @@
 {
-  "name": "FielsdownWiki",
+  "name": "fielsdown-wiki-project",
   "version": "1.0.0",
-  "description": "Configuration file for Fielsdown Wiki site on Vercel using Next.js.",
+  "description": "Wiki project deployed on Vercel.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build"
+    "build": "next build",
     "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "next lint"
   },
   "keywords": [
+    "wiki",
     "vercel",
-    "nextjs",
-    "wiki"
+    "nextjs"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "^14.1.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
