@@ -4,7 +4,6 @@
   "description": "Configuration file for Fielsdown Wiki site on Vercel using Next.js.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
